@@ -53,7 +53,7 @@
 // function divide(a,b){
 //     console.log(a/b);
 // }
-// plus(1,2);
+// plus(1,2); 
 // divide(20,10);
 
 // const player1 = {
