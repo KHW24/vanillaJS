@@ -66,20 +66,36 @@
 // console.log(player1.name);
 // player1.sayHello("lynn"); 
 
-const title = document.querySelector(".hello h1");
+// const title = document.querySelector(".hello h1");
+
+// function handleTitleclick(){
+//     title.style.color = "blue";
+// }
+
+// function handleMouseEnter(){
+//     title.innerText = "Mouse is here!";
+// }
+
+// function handleMouseLeave(){
+//     title.innerText = "Mouse is gone!";
+// }
+
+// title.addEventListener("click", handleTitleclick);
+// title.addEventListener("mouseenter", handleMouseEnter);
+// title.addEventListener("mouseleave", handleMouseLeave);
+
+const h1 = document.querySelector("div.hello:first-child h1");
 
 function handleTitleclick(){
-    title.style.color = "blue";
+    //const clickedClass = "clicked"
+    // if(h1.classList.contains(clickedClass)){
+    //     h1.classList.remove(clickedClass);
+    // }else{
+    //     h1.classList.add(clickedClass);
+    // }
+
+    // 위의 코드가 toggle 한 줄로 완성
+    h1.classList.toggle("clicked");
 }
 
-function handleMouseEnter(){
-    title.innerText = "Mouse is here!";
-}
-
-function handleMouseLeave(){
-    title.innerText = "Mouse is gone!";
-}
-
-title.addEventListener("click", handleTitleclick);
-title.addEventListener("mouseenter", handleMouseEnter);
-title.addEventListener("mouseleave", handleMouseLeave);
+h1.addEventListener("click", handleTitleclick);
