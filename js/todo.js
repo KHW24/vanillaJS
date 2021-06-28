@@ -2,12 +2,13 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
 
-const TODOS_KEY = "todos"
+const TODOS_KEY = "todos";
 
-const toDos = [];
+let toDos = [];
 
+// JavaScript의 object나 array 등을 String으로 변환
 function saveToDos(){
-    localStorage.setItem("TODOS_KEY", JSON.stringify(toDos));
+    localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
 function deleteToDo(event){
@@ -17,6 +18,7 @@ function deleteToDo(event){
     li.remove();
 }
 
+// 화면에 ToDo를 나타내주는 기능
 function paintToDo(newTodo){
     //console.log("i will paint", newTodo, newTodo);
     const li = document.createElement("li");
@@ -41,13 +43,17 @@ function handleToDoSumit(event){
 
 toDoForm.addEventListener("submit", handleToDoSumit);
 
-function sayHello(item){
-    console.log("this is the turn of", item);
-}
 
 const savedToDos = localStorage.getItem(TODOS_KEY);
 
-if(saveToDos !== null){
+if(savedToDos !== null){
+    // JavaScipt에서 사용 가능한 Object로 변환
     const parsedToDos = JSON.parse(savedToDos);
-    parsedToDos.forEach((item) => console.log("this is the turn of", item));
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);
+
+    //parsedToDos.forEach((item)  => console.log("this is the turn of", item));
+    // function sayHello(item){
+    //     console.log("this is the turn of", item);
+    // }
 }
