@@ -15,7 +15,10 @@ function deleteToDo(event){
     // 무엇이 클릭되는지 확인
     //console.log(event.target.parentElement.innerText);
     const li = event.target.parentElement;
+    console.log(typeof li.id);
     li.remove();
+    toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
+    saveToDos();
 }
 
 // 화면에 ToDo를 나타내주는 기능
@@ -62,4 +65,4 @@ if(savedToDos !== null){
     //     console.log("this is the turn of", item);
     // }
 }
-
+ 
