@@ -1,3 +1,10 @@
 .hidden {
     display: none;
 }
+
+/* 가져온 이미지로 전체화면 설정
+    #body{
+    background-image: url(js/background.js);
+    background-repeat: no-repeat;
+    background-size: cover;
+} */
